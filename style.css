@@ -4,7 +4,10 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-
+header{
+    position: sticky;
+    top: 0;
+}
 nav {
     width: 100%;
     height: 8vh;
@@ -83,137 +86,6 @@ a{
     z-index: 1;
 }
 
-ul.menu1 {
-    position: absolute;
-    left: 14px;
-    top: 12%;
-    display: none;
-}
-
-.menu1 li {
-    background: rgb(221, 221, 221);
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 140px;
-}
-
-.menu1 li:hover {
-    background: rgb(180, 178, 178);
-}
-
-.parent1:hover .menu1 {
-    display: block;
-}
-
-ul .menu2 {
-    position: absolute;
-    left: 10%;
-    top: 12%;
-    display: none;
-}
-
-.menu2 li {
-    background: rgb(221, 221, 221);
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 140px;
-}
-
-.menu2 li:hover {
-    background: rgb(180, 178, 178);
-}
-
-.parent2:hover .menu2 {
-    display: block;
-}
-
-ul .menu3 {
-    position: absolute;
-    left: 19%;
-    top: 12%;
-    display: none;
-}
-
-.menu3 li {
-    background: rgb(221, 221, 221);
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 140px;
-}
-
-.menu3 li:hover {
-    background: rgb(180, 178, 178);
-}
-
-.parent3:hover .menu3 {
-    display: block;
-}
-
-ul .menu4 {
-    position: absolute;
-    left: 26%;
-    top: 12%;
-    display: none;
-}
-
-.menu4 li {
-    background: rgb(221, 221, 221);
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 140px;
-}
-
-.menu4 li:hover {
-    background: rgb(180, 178, 178);
-}
-
-.parent4:hover .menu4 {
-    display: block;
-}
-
-ul .menu5 {
-    position: absolute;
-    left: 34%;
-    top: 12%;
-    display: none;
-}
-
-.menu5 li {
-    background: rgb(221, 221, 221);
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 140px;
-}
-
-.menu5 li:hover {
-    background: rgb(180, 178, 178);
-}
-
-.parent5:hover .menu5 {
-    display: block;
-}
-
-ul .menu6 {
-    position: absolute;
-    left: 43%;
-    top: 12%;
-    display: none;
-}
-
-.menu6 li {
-    background: rgb(221, 221, 221);
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 140px;
-}
-
-.menu6 li:hover {
-    background: rgb(180, 178, 178);
-}
-
-.parent6:hover .menu6 {
-    display: block;
-}
 
 /* ------------------------------------header----------------------------------- */
 
