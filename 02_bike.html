@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4dd99d6812.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+        }
+
+        nav {
+            width: 100%;
+            height: 8vh;
+            padding: 20px 10%;
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav h1 {
+            cursor: pointer;
+            color: white;
+        }
+
+        .bar {
+            width: 450px;
+            height: 35px;
+            border-radius: 15px;
+            padding: 20px;
+            border: none;
+            margin: 7px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .search button {
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 12px;
+            border: none;
+            margin-right: 80px;
+        }
+
+        .search button:hover {
+            scale: 0.95;
+        }
+
+        .btn button {
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 12px;
+            border: none;
+            margin: 5px;
+        }
+
+        header .secNav {
+            height: 6vh;
+            background-color: rgb(203, 203, 203);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .main a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main a:hover {
+            color: brown;
+        }
+
+        .main ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 18px 10%;
+            font-size: 16px;
+        }
+
+        .main ul li {
+            margin-left: 25px;
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        ul.menu1 {
+            position: absolute;
+            left: 14px;
+            top: 12%;
+            display: none;
+        }
+
+        .menu1 li {
+            background: rgb(221, 221, 221);
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 140px;
+        }
+
+        .menu1 li:hover {
+            background: rgb(180, 178, 178);
+        }
+
+        .parent1:hover .menu1 {
+            display: block;
+        }
+
+        ul .menu2 {
+            position: absolute;
+            left: 10%;
+            top: 12%;
+            display: none;
+        }
+
+        .menu2 li {
+            background: rgb(221, 221, 221);
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 140px;
+        }
+
+        .menu2 li:hover {
+            background: rgb(180, 178, 178);
+        }
+
+        .parent2:hover .menu2 {
+            display: block;
+        }
+
+        ul .menu3 {
+            position: absolute;
+            left: 19%;
+            top: 12%;
+            display: none;
+        }
+
+        .menu3 li {
+            background: rgb(221, 221, 221);
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 140px;
+        }
+
+        .menu3 li:hover {
+            background: rgb(180, 178, 178);
+        }
+
+        .parent3:hover .menu3 {
+            display: block;
+        }
+
+        ul .menu4 {
+            position: absolute;
+            left: 26%;
+            top: 12%;
+            display: none;
+        }
+
+        .menu4 li {
+            background: rgb(221, 221, 221);
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 140px;
+        }
+
+        .menu4 li:hover {
+            background: rgb(180, 178, 178);
+        }
+
+        .parent4:hover .menu4 {
+            display: block;
+        }
+
+        ul .menu5 {
+            position: absolute;
+            left: 34%;
+            top: 12%;
+            display: none;
+        }
+
+        .menu5 li {
+            background: rgb(221, 221, 221);
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 140px;
+        }
+
+        .menu5 li:hover {
+            background: rgb(180, 178, 178);
+        }
+
+        .parent5:hover .menu5 {
+            display: block;
+        }
+
+        ul .menu6 {
+            position: absolute;
+            left: 43%;
+            top: 12%;
+            display: none;
+        }
+
+        .menu6 li {
+            background: rgb(221, 221, 221);
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 140px;
+        }
+
+        .menu6 li:hover {
+            background: rgb(180, 178, 178);
+        }
+
+        .parent6:hover .menu6 {
+            display: block;
+        }
+
+        /* ---------------------------------header---------------------------- */
+
+
+        main .head {
+            padding: 30px 10%;
+            font-size: 60px;
+        }
+
+        .main1 {
+            padding: 0px 5%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+        }
+
+        .bikes {
+            background-color: rgb(231, 224, 224);
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        .bikes img {
+            width: 100%;
+            height: 80%;
+            border-radius: 30px;
+            padding: 20px;
+            cursor: pointer;
+
+        }
+
+        .bikes h1 {
+            padding: 1px 20px;
+            font-size: 28px;
+        }
+
+        .bikes h2 {
+            padding: 1px 20px;
+            margin-bottom: 5px;
+        }
+
+        .end {
+            margin: 30px;
+        }
+
+
+        section {
+            background-image: url(https://images.unsplash.com/photo-1629501195688-f3b0254b333e?q=80&w=2812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        }
+
+        .details {
+            padding: 10%;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-basis: 60%;
+            color: white;
+        }
+
+        .details img {
+            width: 60%;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+
+        .detail {
+            flex-basis: 40%;
+            margin-left: 40px;
+        }
+
+        .detail h1 {
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+
+        .detail h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+
+        }
+
+        .detail p {
+            font-size: 30px;
+        }
+
+        .features {
+            padding: 10%;
+        }
+
+        .features h1 {
+            color: azure;
+            font-size: 60px;
+        }
+
+        .box {
+            color: white;
+
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .box h1 {
+            font-size: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+
+        .box h2 {
+            font-size: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+
+        #section {
+            display: none;
+        }
+
+        #sub {
+            display: block;
+        }
+
+        #price1 {
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <sub id="sub">
+        <header>
+            <nav>
+                <a href="index.html">
+                    <h1>goCar</h1>
+                </a>
+                <div class="search">
+                    <input type="text" placeholder="Search" class="bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="btn">
+                        <button><i class="fa-solid fa-user"></i></button>
+                        <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="secNav">
+                <div class="main">
+                    <ul>
+                        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+                        <div class="parent1">
+                            <a href="01_cars.html">
+                                <li>CAR</li>
+                            </a>
+                        </div>
+                        <div class="parent2">
+                            <a href="02_bike.html">
+                                <li>BIKE</li>
+                            </a>
+                        </div>
+                        <div class="parent3">
+                            <a href="03_news.html">
+                                <li>NEWS</li>
+                            </a>
+                        </div>
+                        <div class="parent4">
+                            <a href="04_reviews.html">
+                                <li>REVIEWS</li>
+                            </a>
+                        </div>
+                        <div class="parent5">
+                            <a href="05_features.html">
+                                <li>FEATURES</li>
+                            </a>
+                        </div>
+                        <div class="parent6">
+                            <a href="06_gallery.html">
+                                <li>GALLERY</li>
+                            </a>
+                        </div>
+                        <a href="">
+                            <li>ADVICE</i>
+                            <li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <main>
+            <h1 class="head">BIKES</h1>
+            <div class="main1">
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="end">
+
+            </div>
+        </footer>
+    </sub>
+
+    <section id="section">
+        <div class="details">
+            <img src="https://images.unsplash.com/photo-1570280406792-bf58b7c59247?q=80&w=2924&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                id="image1">
+            <div class="detail">
+                <h1 id="name1">Lamborghini Aventador Gold</h1>
+                <h2 id="price1"><i class="fa-solid fa-indian-rupee-sign"></i> 4.50 Crores</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolorem laboriosam, veritatis eum
+                    velit nemo mollitia! Vitae beatae, earum magnam alias odit veniam praesentium, officiis dolore
+                    eveniet temporibus, possimus ullam!</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h1>FEATURES</h1>
+            <div class="box">
+                <h1 id="name2">Mercedes AMG</h1>
+                <h2 id="price2">Price : 2.90 Crore</h2>
+                <h2 id="ts">Top Speed : 318 Kmph</h2>
+                <h2 id="hp">Horse Power : 831 HP</h2>
+                <h2 id="en">Engine : V8 Engine</h2>
+                <h2 id="sc">Seating Capacity : 2</h2>
+                <h2 id="ft">FeulType : Petrol</h2>
+                <h2 id="acc">Acceleration : 3.6 Seconds</h2>
+                <h2 id="gb">GearBox : 7-Speed</h2>
+                <h2 id="tt">TransmissionType : Automatic</h2>
+            </div>
+    </section>
+
+
+    <script>
+
+
+        let section = document.getElementById("section")
+        let sub = document.getElementById("sub")
+        let image1 = document.getElementById("image1")
+        let name1 = document.getElementById("name1")
+        let price1 = document.getElementById("price1")
+        let name2 = document.getElementById("name2")
+        let price2 = document.getElementById("price2")
+        let ts = document.getElementById("ts")
+        let hp = document.getElementById("hp")
+        let en = document.getElementById("en")
+        let sc = document.getElementById("sc")
+        let ft = document.getElementById("ft")
+        let acc = document.getElementById("acc")
+        let gb = document.getElementById("gb")
+        let tt = document.getElementById("tt")
+
+        var bikes = [
+            { name: "Royal Enfield 350", price: "1.5 Lakhs", image: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson", price: "9.2 Lakhs", image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Truimph 450", price: "11.8 Lakhs", image: "https://images.unsplash.com/photo-1627366197691-e0d5cee520bd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.5 Lakhs", image: "https://plus.unsplash.com/premium_photo-1661869085660-3252fcd3e505?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson 103", price: "8.1 Lakhs", image: "https://images.unsplash.com/photo-1610697180268-8a279a15ff7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.40 Lakhs", image: "https://images.unsplash.com/photo-1623999691691-c3753224836e?q=80&w=2870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Duke 390", price: "3.40 Lakhs", image: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati SuperSport S", price: "12.8 Lakhs", image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "BMW S1000", price: "18 Lakhs", image: "https://images.unsplash.com/photo-1545623703-583dd2364bbd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield Himalyan", price: "2.8 Lakhs", image: "https://images.unsplash.com/photo-1609174470568-ac0c96458a67?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Yamaha R15", price: "1.9 Lakhs", image: "https://images.unsplash.com/photo-1562555129-d10ec6087ff9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati V4", price: "34 Lakhs Crore", image: "https://images.unsplash.com/photo-1624870420774-8b3b08b7db0f?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield 350", price: "1.5 Lakhs", image: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson", price: "9.2 Lakhs", image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Truimph 450", price: "11.8 Lakhs", image: "https://images.unsplash.com/photo-1627366197691-e0d5cee520bd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.5 Lakhs", image: "https://plus.unsplash.com/premium_photo-1661869085660-3252fcd3e505?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson 103", price: "8.1 Lakhs", image: "https://images.unsplash.com/photo-1610697180268-8a279a15ff7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.40 Lakhs", image: "https://images.unsplash.com/photo-1623999691691-c3753224836e?q=80&w=2870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Duke 390", price: "3.40 Lakhs", image: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati SuperSport S", price: "12.8 Lakhs", image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "BMW S1000", price: "18 Lakhs", image: "https://images.unsplash.com/photo-1545623703-583dd2364bbd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield Himalyan", price: "2.8 Lakhs", image: "https://images.unsplash.com/photo-1609174470568-ac0c96458a67?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Yamaha R15", price: "1.9 Lakhs", image: "https://images.unsplash.com/photo-1562555129-d10ec6087ff9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati V4", price: "34 Lakhs Crore", image: "https://images.unsplash.com/photo-1624870420774-8b3b08b7db0f?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield 350", price: "1.5 Lakhs", image: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson", price: "9.2 Lakhs", image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Truimph 450", price: "11.8 Lakhs", image: "https://images.unsplash.com/photo-1627366197691-e0d5cee520bd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.5 Lakhs", image: "https://plus.unsplash.com/premium_photo-1661869085660-3252fcd3e505?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson 103", price: "8.1 Lakhs", image: "https://images.unsplash.com/photo-1610697180268-8a279a15ff7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.40 Lakhs", image: "https://images.unsplash.com/photo-1623999691691-c3753224836e?q=80&w=2870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Duke 390", price: "3.40 Lakhs", image: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati SuperSport S", price: "12.8 Lakhs", image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "BMW S1000", price: "18 Lakhs", image: "https://images.unsplash.com/photo-1545623703-583dd2364bbd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield Himalyan", price: "2.8 Lakhs", image: "https://images.unsplash.com/photo-1609174470568-ac0c96458a67?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Yamaha R15", price: "1.9 Lakhs", image: "https://images.unsplash.com/photo-1562555129-d10ec6087ff9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati V4", price: "34 Lakhs Crore", image: "https://images.unsplash.com/photo-1624870420774-8b3b08b7db0f?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield 350", price: "1.5 Lakhs", image: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson", price: "9.2 Lakhs", image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Truimph 450", price: "11.8 Lakhs", image: "https://images.unsplash.com/photo-1627366197691-e0d5cee520bd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.5 Lakhs", image: "https://plus.unsplash.com/premium_photo-1661869085660-3252fcd3e505?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Harley Davidson 103", price: "8.1 Lakhs", image: "https://images.unsplash.com/photo-1610697180268-8a279a15ff7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Continental GT 650", price: "4.40 Lakhs", image: "https://images.unsplash.com/photo-1623999691691-c3753224836e?q=80&w=2870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Duke 390", price: "3.40 Lakhs", image: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati SuperSport S", price: "12.8 Lakhs", image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "BMW S1000", price: "18 Lakhs", image: "https://images.unsplash.com/photo-1545623703-583dd2364bbd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Royal Enfield Himalyan", price: "2.8 Lakhs", image: "https://images.unsplash.com/photo-1609174470568-ac0c96458a67?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Yamaha R15", price: "1.9 Lakhs", image: "https://images.unsplash.com/photo-1562555129-d10ec6087ff9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+            { name: "Ducati V4", price: "34 Lakhs Crore", image: "https://images.unsplash.com/photo-1624870420774-8b3b08b7db0f?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", TopSpeed: "230kmph", HorsePower: "971 HP", Engine: "V6 Engine", SeatingCapacity: "2", FeulType: "Diesel", Acceleration: "4.2 Seconds", GearBox: "7-Speed", TransmissionType: "Automatic" },
+        ]
+
+        function addBikes() {
+            var clutter = ""
+            bikes.forEach(function (bike, index) {
+                clutter += `<div class="bikes">
+                    <a href="#section">
+                    <img src="${bike.image}" class="add" data-index="${index}"">
+                    </a>
+                    <h1>${bike.name}</h1>
+                    <h2><i class="fa-solid fa-indian-rupee-sign"></i> ${bike.price}</h2>
+                </div>`
+            })
+            document.querySelector(".main1").innerHTML = clutter
+        }
+        addBikes()
+
+
+        function detail() {
+            document.querySelector(".main1").addEventListener("click", function (detailss) {
+                if (detailss.target.classList.contains('add')) {
+                    let data = bikes[detailss.target.dataset.index]
+                    console.log(data);
+                    section.style.display = "block";
+                    sub.style.display = "none";
+
+
+                    image1.src = `${data.image}`
+                    name1.innerHTML = `${data.name}`
+                    price1.innerHTML = `<i class="fa-solid fa-indian-rupee-sign"> ${data.price}`
+
+                    name2.innerHTML = `Name: ${data.name}`
+                    price2.innerHTML = `Price: ${data.price}`
+                    ts.innerHTML = `Top Speed: ${data.TopSpeed}`
+                    hp.innerHTML = `Horse Power: ${data.HorsePower}`
+                    en.innerHTML = `Engine: ${data.Engine}`
+                    sc.innerHTML = `Seating Capacity: ${data.SeatingCapacity}`
+                    ft.innerHTML = `Fuel Type: ${data.FeulType}`
+                    acc.innerHTML = `Acceleration: ${data.Acceleration}`
+                    gb.innerHTML = `Gear Box: ${data.GearBox}`
+                    tt.innerHTML = `Transmission Type: ${data.TransmissionType}`
+
+
+
+                }
+            })
+        }
+
+        detail()
+
+    </script>
+</body>
+
+</html>
